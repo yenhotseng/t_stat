@@ -1,6 +1,6 @@
 
 ├── README.txt : this file
-├── p0_filter.c : Filter PLL freq c code via "cat /sys/bus/iio/devices/iio\:device0/sampling_frequency"
+├── filter.c : Filter PLL freq c code via "cat /sys/bus/iio/devices/iio\:device0/sampling_frequency"
 ├── run_gdaq.sh : Validate PRU freq and PLL issue via running gdaq
 ├── run_test.py : run os command from Python code
 ├── stat_t.py : Do t-test statistical
