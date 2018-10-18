@@ -28,18 +28,37 @@ def independent_ttest(data1, data2, alpha):
 # seed the random number generator
 seed(1)
 # generate two independent samples
-data1 = 5 * randn(100) + 50
-data2 = 5 * randn(100) + 51
+
+data1 = []
+data2 = []
+# f = open('data02.txt')
+# f = open('data01.txt')
+f = open('1306.txt')
+for line in f:
+  data1.append(float(line))
+f.close();
+
+# f1 = open('data03.txt')
+f1 = open('1078_s.txt')
+#f1 = open('1306.txt')
+for line in f1:
+  data2.append(float(line))
+f1.close();
+
+#data1 = 5 * randn(100) + 50
+#data2 = 5 * randn(100) + 51
 # calculate the t test
 alpha = 0.05
 t_stat, df, cv, p = independent_ttest(data1, data2, alpha)
 print('t=%.3f, df=%d, cv=%.3f, p=%.3f' % (t_stat, df, cv, p))
 # interpret via critical value
+print('interpret via critical value:')
 if abs(t_stat) <= cv:
 	print('Accept null hypothesis that the means are equal.')
 else:
 	print('Reject the null hypothesis that the means are equal.')
 # interpret via p-value
+print('interpret via p value:')
 if p > alpha:
 	print('Accept null hypothesis that the means are equal.')
 else:
